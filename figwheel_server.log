@@ -1,0 +1,75 @@
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/employees_devcards.js" failed.
+[0mclojure.lang.ExceptionInfo: EOF while reading, starting at line 1 and column 1
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    clojure.tools.reader.reader_types$reader_error.doInvoke (reader_types.clj:331)
+    clojure.lang.RestFn.invoke (RestFn.java:439)
+    clojure.tools.reader$read_delimited.invoke (reader.clj:199)
+    clojure.tools.reader$read_list.invoke (reader.clj:208)
+    clojure.tools.reader$read_STAR_.invoke (reader.clj:889)
+    clojure.tools.reader$read.invoke (reader.clj:938)
+    cljs.analyzer$forms_seq_STAR_$forms_seq___1908$fn__1909$fn__1910.invoke (analyzer.cljc:2626)
+    cljs.analyzer$forms_seq_STAR_$forms_seq___1908$fn__1909.invoke (analyzer.cljc:2619)
+    clojure.lang.LazySeq.sval (LazySeq.java:40)
+    clojure.lang.LazySeq.seq (LazySeq.java:49)
+    clojure.lang.RT.seq (RT.java:507)
+    clojure.core/seq (core.clj:137)
+    cljs.analyzer$parse_ns$fn__1924.invoke (analyzer.cljc:2702)
+    cljs.analyzer$parse_ns.invoke (analyzer.cljc:2682)
+    cljs.analyzer$parse_ns.invoke (analyzer.cljc:2673)
+    cljs.compiler$find_source.invoke (compiler.cljc:1389)
+    clojure.core$map$fn__4553.invoke (core.clj:2624)
+    clojure.lang.LazySeq.sval (LazySeq.java:40)
+    clojure.lang.LazySeq.seq (LazySeq.java:56)
+    clojure.lang.Cons.next (Cons.java:39)
+    clojure.lang.RT.next (RT.java:674)
+    clojure.core/next (core.clj:64)
+    clojure.core$reduce1.invoke (core.clj:909)
+    clojure.core$set.invoke (core.clj:3960)
+    cljs.closure$add_dependency_sources.invoke (closure.clj:731)
+    cljs.closure$build.invoke (closure.clj:1807)
+    cljs.build.api$build.invoke (api.clj:207)
+    figwheel_sidecar.components.cljs_autobuild$cljs_build.invoke (cljs_autobuild.clj:24)
+    figwheel_sidecar.build_middleware.injection$hook$fn__15906.invoke (injection.clj:139)
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.065 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/employees_devcards.js" failed.
+[0mANALYSIS ERROR: No such namespace: reagent.core, could not locate reagent/core.cljs, reagent/core.cljc, or Closure namespace "reagent.core" on file null, line null, column null
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.288 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/employees_devcards.js" failed.
+[0mANALYSIS ERROR: No such namespace: reagent.core, could not locate reagent/core.cljs, reagent/core.cljc, or Closure namespace "reagent.core" on file null, line null, column null
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.09 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+WARNING: Use of undeclared Var employees.core/defcard-doc at line 9 /Users/hugobessa/workspace/employees/src/employees/core.cljs
+notifying browser that file changed:  resources/public/js/compiled/devcards_out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/devcards_out/cljs_deps.js
+notifying browser that file changed:  out/employees/core.js
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.422 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+notifying browser that file changed:  out/employees/core.js
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.215 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+notifying browser that file changed:  out/employees/core.js
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.16 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+notifying browser that file changed:  out/employees/core.js
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.165 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+notifying browser that file changed:  out/employees/core.js
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.185 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+notifying browser that file changed:  out/employees/core.js
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.397 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+notifying browser that file changed:  out/employees/core.js
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.159 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+notifying browser that file changed:  out/employees/core.js
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.49 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+notifying browser that file changed:  out/employees/core.js
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.155 seconds.[0m
+[0mCompiling "resources/public/js/compiled/employees_devcards.js" from ["src"]...
+notifying browser that file changed:  out/employees/core.js
+[32mSuccessfully compiled "resources/public/js/compiled/employees_devcards.js" in 0.521 seconds.[0m
