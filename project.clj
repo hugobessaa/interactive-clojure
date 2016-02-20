@@ -17,7 +17,7 @@
                  [cljsjs/react-dom-server "0.14.3-0"]
 
                  [reagent "0.5.1"]]
-  
+
   :plugins [[lein-figwheel "0.5.0-6"]
             [lein-cljsbuild "1.1.2" :exclusions [org.clojure/clojure]]
             [cider/cider-nrepl "0.11.0-SNAPSHOT"]
@@ -25,7 +25,7 @@
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled"
                                     "target"]
-  
+
   :source-paths ["src"]
 
   :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.0-1"]
