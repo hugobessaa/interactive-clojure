@@ -76,7 +76,7 @@
 
    (mkdn-pprint-source search-input)))
 
-(defcard react-no-jsx
+#_(defcard react-no-jsx
   (doc
    "Não precisamos de JSX."
 
@@ -102,13 +102,21 @@
    ;; ATIVAR
    (mkdn-pprint-code (map identity ["you" "are" "awesome"]))))
 
+(defcard tech
+  (doc
+   ;; ADICIONAR LINKS
+   "Usarei:
+
+- [devcards]() para construir essa interface interativa
+- [figwheel]() para recarregar o código no browser"))
+
 (def employee-data
   {:name "Paulo Ahagon"
    :position "Chefe"})
 
 (defn employee [props]
   [:div {:class "employee"}
-   [:span {:class "employee-name"} (get props :name)]
+   [:span {:class "employee-name"}  (get props :name)]
    [:span {:class "employee-position"} (get props :position)]])
 
 (defcard start
@@ -161,9 +169,11 @@
   (mkdn-pprint-code '{:query "Paulo"}))
 
 (defonce state (r/atom {:query ""
-                        :employees [{:name "Paulo Ahagon" :position "Chefe"}
+                        :employees [{:name "Daniel Filho" :position "Desenvolvedor front-end"}
+                                    {:name "Diego Souza"  :position "Engenheiro de Software"}
+                                    {:name "Milhouse"     :position "Engenheiro de Software"}
                                     {:name "Nick"         :position "Gringo"}
-                                    {:name "Milhouse"     :position "Engenheiro de Software"}]}))
+                                    {:name "Paulo Ahagon" :position "Chefe"}]}))
 
 (defn change-query [query]
   (swap! state assoc :query query))
@@ -174,7 +184,8 @@
 (defn search [props]
   [:input {:class "search"
            :value (:query props)
-           :on-change (:on-change props)}])
+           :on-change (:on-change props)
+           :placeholder "Filtrar..."}])
 
 (defcard search-comp
   "Nosso componente de campo de busca"
@@ -189,13 +200,15 @@
   "Agora juntamos os dados para formar o estado da nossa aplicação"
 
   (mkdn-pprint-code '{:query ""
-                      :employees [{:name "Paulo Ahagon" :position "Chefe"}
+                      :employees [{:name "Daniel Filho" :position "Desenvolvedor front-end"}
+                                  {:name "Diego Souza"  :position "Engenheiro de Software"}
+                                  {:name "Milhouse"     :position "Engenheiro de Software"}
                                   {:name "Nick"         :position "Gringo"}
-                                  {:name "Milhouse"     :position "Engenheiro de Software"}]}))
+                                  {:name "Paulo Ahagon" :position "Chefe"}]}))
 
 (defcard about-state
   (doc
-   "Para o Reagent, nosso estado é um `atom`."
+   "Para o [reagent](), nosso estado é um `atom`."
 
    "Uma referência para os diversos valores que ele assumirá durante a execução da aplicação."
 
@@ -225,6 +238,9 @@
 (def test-employees
   [{:name "Paulo"} {:name "Nick"} {:name "Milhouse"}])
 
+(defcard test-data
+  (mkdn-pprint-source test-employees))
+
 (deftest filter-tests
   (is (= (query-filter "P" test-employees)
          [{:name "Paulo"}]))
@@ -236,14 +252,15 @@
          [{:name "Nick"}]))
 
   ;;; REMOVER O "i" por ""
-  (is (= (query-filter "i" test-employees)
+  (is (= (query-filter "" test-employees)
          test-employees)))
 
 (defn app []
   [:div {:class "app"}
    [search {:query (:query @state)
             :on-change on-change}]
-   [employee-list {:employees (:employees @state)}]])
+   [employee-list {:employees (query-filter (:query @state)
+                                            (:employees @state))}]])
 
 (defcard compose-app
   "Juntando os componentes que criamos, temos o nosso app"
@@ -255,31 +272,13 @@
   {:inspect-data true
    :history true})
 
+(defcard css
+  "No devcards, o css também é carregado automaticamente")
 
+(defcard at-xerpa
+  "Na Xerpa, usamos o devcards para documentar todos os componentes de interface")
 
-#_(defcard-doc
-  #_"# Hello World!"
+(defcard work-at-xerpa
+  "### Estamos procurando devs frontend :)"
 
-  "# Programação Interativa com ClojureScript"
-
-  "Outline da palestra:
-
-- Montar um exemplo interativamente
-- O exemplo escolhido foi uma interface de filtrar funcionários
-- Sem Todo MVC, por favor :P
-- Teremos uma imagem de como deve ser o aplicativo (uma screenshot do exemplo final :P)
-- Vamos começar com cada componente básico
-  1. campo de busca
-  1. componente do funcionário. com avatar e nome
-  1. componente para listar funcionários
-  1. como seria o estado da nossa aplicação? (:query, :employees)
-  1. criar o componente que injeta a query no campo de busca
-  1. fazer o campo de busca receber callback e exportar edições
-  1. listar os funcionários a partir do estado
-  1. implementar função que filtra os funcionários de acordo com a busca
-  1. implementar test básico para o filtro
-  1. usar o :inspect-data e :history para vermos como estamos utilizando os dados
-- Vamos brincar no REPL. Podemos executar comandos para alterar o nosso estado.
-- Vimos que é possível criar um aplicativo de dentro para fora, interativamente
-- Isso possibilita um feedback rápido na hora do desenvolvimento
-- Para o nosso aplicativo na Xerpa, temos também a vantagem de criar uma documentação viva para todos os componentes da interface, além de poder testá-los e brincar com o estado que renderiza cada um")
+  "hbessa@xerpa.com.br")
